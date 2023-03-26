@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMC</title>
+</head>
+<body>
+    <div class="container">
+        <div class="texto-imagem">
+        <h3>ATENÇÃO</h3> 
+        <p>Seu Índice de Massa Corporal (IMC) não determina sua saúde, isso é uma ciência inexata, em dúvidas, procure um médico.</p>
+            <img src="https://images.pexels.com/photos/1903611/pexels-photo-1903611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </div>
+    <div class="calculator">
+    <h1>Calcule</h1>
+    <label for="peso">Peso (kg)</label>
+    <input id="peso" type="number" name="peso">
+    <br>
+    <label for="alura">Altura</label>
+    <input type="number" id="altura" name="altura">
+
+    <br>
+
+    <button onclick="calcularImc()">Calcular</button>
+    <br>
+
+    <p>Seu Índice de Massa Corporal é <span id="resultado"></span></p>
+</div>
+</div>
+<div class="explain">
+    <p>"Esta é uma medida de referência internacional reconhecida pela OMS (Organização Mundial da Saúde). É um cálculo simples para avaliar o peso, porém não mede diretamente a gordura corporal, já que não contempla a massa magra, massa gorda, líquidos e a estrutura óssea da pessoa em questão."</p>
+</div>
+
+<footer>&copy;Catiuscia Centeno</footer>
+
+    <script>
+    function calcularImc () {
+        const peso = document.getElementById('peso').value;
+        const altura = document.getElementById('altura').value;
+        const imc = peso/(altura**2).toFixed(2);
+        document.getElementById('resultado').textContent = imc;
+    }
+
+    let tituloDinamico = document.title 
+
+    window.addEventListener ("blur",() => {
+        document.title = "Volte"
+    });
+
+    window.addEventListener ("focus", () => {
+        document.title = tituloDinamico;
+    })
+
+    </script>
+
+
+
+</body>
+</html>
